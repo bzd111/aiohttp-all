@@ -1,0 +1,23 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+mypy = "*"
+flake8 = "*"
+black = "*"
+isort = "*"
+pytest-aiohttp = "*"
+
+[packages]
+aiohttp = "*"
+aiohttp-session = "*"
+aiosqlite = "*"
+aiohttp-jinja2 = "*"
+pillow = "*"
+click = "*"
+aioresponses = "*"
+
+[requires]
+python_version = "3.7"

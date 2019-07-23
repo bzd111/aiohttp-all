@@ -2,7 +2,7 @@ import asyncio
 import io
 import sqlite3
 from pathlib import Path
-from typing import Any, AsyncIterator, Dict, Awaitable, Callable
+from typing import Any, AsyncIterator, Awaitable, Callable, Dict
 
 import aiohttp_jinja2
 import aiohttp_session

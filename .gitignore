@@ -105,3 +105,12 @@ venv.bak/
 
 # vocode
 .vscode
+
+# pycharm
+.idea
+
+# macos
+.DS_store
+
+# sqlite3
+*.sqlite3

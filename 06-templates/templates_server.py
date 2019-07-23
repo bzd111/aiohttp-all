@@ -7,6 +7,7 @@ import aiosqlite
 import jinja2
 from aiohttp import web
 
+
 router = web.RouteTableDef()
 
 
@@ -151,4 +152,3 @@ try_make_db()
 
 
 web.run_app(init_app())
-
