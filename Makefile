@@ -2,12 +2,12 @@ setup:
 	pipenv shell
 	pipenv install
 
-PY = $(shell find code -type f -name "*.py")
+PY = $(shell find . -type f -name "*.py")
 
 lint:
-	isort --check -rc code
-	black --check code
-	flake8 code
+	isort --check -rc .
+	black --check .
+	flake8 .
 	mypy $(PY)
 
 doc:
@@ -15,8 +15,8 @@ doc:
 	@echo "open file://`pwd`/docs/_build/html/index.html"
 
 fmt format:
-	isort -rc code
-	black code
+	isort -rc .
+	black .
 
 test:
 	pytest code/10-testing/tests

@@ -12,6 +12,7 @@ import PIL
 import PIL.Image
 from aiohttp import web
 
+
 router = web.RouteTableDef()
 _WebHandler = Callable[[web.Request], Awaitable[web.StreamResponse]]
 
@@ -134,8 +135,6 @@ async def new_post_apply(request: web.Request) -> Dict[str, Any]:
     post = await request.post()
     session = await aiohttp_session.get_session(request)
     owner = session["username"]
-    # async with db.execute("insert into posts (owner, editor, title, text) values (?,?,?,?)",
-    # [owner, owner, post["title"], post["text"]]) as cursor:
 
     async with db.execute(
         "insert into posts (owner, editor, title, text) values (?,?,?,?)",
@@ -165,8 +164,6 @@ async def view_post(request: web.Request) -> Dict[str, Any]:
 @aiohttp_jinja2.template("edit.html")
 async def edit_post(request: web.Request) -> Dict[str, Any]:
     post_id = request.match_info["post"]
-    session = await aiohttp_session.get_session(request)
-    owner = session["username"]
     db = request.config_dict["DB"]
     return {"post": await fetch_post(db, post_id)}
 

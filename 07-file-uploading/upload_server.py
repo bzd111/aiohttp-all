@@ -11,6 +11,7 @@ import PIL
 import PIL.Image
 from aiohttp import web
 
+
 router = web.RouteTableDef()
 
 
@@ -76,8 +77,6 @@ async def new_post_apply(request: web.Request) -> Dict[str, Any]:
     db = request.config_dict["DB"]
     post = await request.post()
     owner = "Anonymous"
-    # async with db.execute("insert into posts (owner, editor, title, text) values (?,?,?,?)",
-    # [owner, owner, post["title"], post["text"]]) as cursor:
 
     async with db.execute(
         "insert into posts (owner, editor, title, text) values (?,?,?,?)",

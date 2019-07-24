@@ -6,6 +6,7 @@ from typing import Any, AsyncIterator, Awaitable, Callable, Dict
 import aiosqlite
 from aiohttp import web
 
+
 router = web.RouteTableDef()
 
 
@@ -154,11 +155,11 @@ async def api_update_post(request: web.Request) -> web.Response:
         {
             "status": "ok",
             "data": {
-                "id": post_id,
-                "owner": owner,
-                "editor": owner,
-                "title": title,
-                "text": text,
+                "id": new_post["id"],
+                "owner": new_post["owner"],
+                "editor": new_post["editor"],
+                "title": new_post["title"],
+                "text": new_post["text"],
             },
         }
     )

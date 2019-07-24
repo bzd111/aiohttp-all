@@ -3,7 +3,7 @@ import functools
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
 from types import TracebackType
-from typing import List, Optional, Type, AsyncIterator, Callable, Awaitable, Any
+from typing import Any, AsyncIterator, Awaitable, Callable, List, Optional, Type
 
 import aiohttp
 import click
